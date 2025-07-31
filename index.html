@@ -645,6 +645,143 @@
         <div class="spinner"></div>
         <p>Procesando con inteligencia artificial...</p>
       </div>
+          <div
+      class="card full-width"
+      style="
+        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        color: white;
+        text-align: center;
+        padding: 30px;
+        margin-top: 30px;
+      "
+    >
+      <h3><i class="fas fa-bullhorn"></i> 🚨 Emergencia - ECU 911</h3>
+      <p style="font-size: 1.1rem; margin: 15px 0">
+        ¿No puedes hacer una llamada desde tu computador? Usa una de estas
+        opciones alternativas para reportar una emergencia en Quito.
+      </p>
+
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          margin: 20px 0;
+        "
+      >
+        <a
+          href="tel:911"
+          style="
+            background-color: white;
+            color: #c0392b;
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+          "
+        >
+          📞 Llamar al 911
+        </a>
+        <button
+          onclick="toggleOpcionesECU()"
+          style="
+            background-color: #f1c40f;
+            color: #2c3e50;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+          "
+        >
+          💬 Otras formas de contacto
+        </button>
+      </div>
+
+      <div
+        id="opciones-ecu"
+        style="
+          display: none;
+          background-color: rgba(255, 255, 255, 0.1);
+          padding: 20px;
+          border-radius: 10px;
+          text-align: left;
+          max-width: 600px;
+          margin: 0 auto;
+        "
+      >
+        <ul style="list-style: none; padding-left: 0; line-height: 1.6">
+          <li>
+            📧 <strong>Email:</strong>
+            <a href="mailto:contacto@ecu911.gob.ec" style="color: #ecf0f1"
+              >contacto@ecu911.gob.ec</a
+            >
+          </li>
+          <li>
+            🌐 <strong>Chat en línea:</strong>
+            <a
+              href="https://www.ecu911.gob.ec"
+              target="_blank"
+              style="color: #ecf0f1"
+              >www.ecu911.gob.ec</a
+            >
+          </li>
+          <li>
+            📷 <strong>Redes sociales:</strong> Twitter / X:
+            <a
+              href="https://twitter.com/ECU911Quito"
+              target="_blank"
+              style="color: #ecf0f1"
+              >@ECU911Quito</a
+            >
+          </li>
+          <li>
+            📍 <strong>Ubicación:</strong> Usa Google Maps y copia tu ubicación
+            para enviarla
+          </li>
+        </ul>
+
+        <button
+          onclick="copiarMensajeEmergencia()"
+          style="
+            margin-top: 15px;
+            background-color: #ffffff;
+            color: #c0392b;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+          "
+        >
+          📋 Copiar mensaje de emergencia
+        </button>
+
+        <p
+          id="mensaje-copiado"
+          style="
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #2ecc71;
+            display: none;
+          "
+        >
+          ✅ Mensaje copiado al portapapeles.
+        </p>
+
+        <p style="font-size: 0.85rem; margin-top: 15px">
+          ⚠️ Recuerda: si puedes usar un teléfono, la llamada directa al 911 es
+          más rápida y efectiva.
+        </p>
+      </div>
+
+      <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.9">
+        El ECU 911 está disponible 24/7 para emergencias en todo el país.
+      </p>
+    </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <script>
@@ -1623,7 +1760,7 @@ La API Key actual parece tener el formato correcto pero no funciona con ningún 
         return "Lo siento 😅, no entiendo eso. Prueba preguntando sobre ríos, lluvia, ahorro de agua o clima.";
       }
     </script>
-    <section id="alertas" style="padding: 2rem">
+    <!-- <section id="alertas" style="padding: 2rem">
       <h2 style="font-size: 1.8rem; color: #2c3e50; margin-bottom: 1rem">
         📢 Alertas Comunitarias
       </h2>
@@ -1714,145 +1851,7 @@ La API Key actual parece tener el formato correcto pero no funciona con ningún 
 
           document.getElementById("alertForm").reset();
         });
-    </script>
-
-    <div
-      class="card full-width"
-      style="
-        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        color: white;
-        text-align: center;
-        padding: 30px;
-        margin-top: 30px;
-      "
-    >
-      <h3><i class="fas fa-bullhorn"></i> 🚨 Emergencia - ECU 911</h3>
-      <p style="font-size: 1.1rem; margin: 15px 0">
-        ¿No puedes hacer una llamada desde tu computador? Usa una de estas
-        opciones alternativas para reportar una emergencia en Quito.
-      </p>
-
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-          margin: 20px 0;
-        "
-      >
-        <a
-          href="tel:911"
-          style="
-            background-color: white;
-            color: #c0392b;
-            padding: 12px 30px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-          "
-        >
-          📞 Llamar al 911
-        </a>
-        <button
-          onclick="toggleOpcionesECU()"
-          style="
-            background-color: #f1c40f;
-            color: #2c3e50;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-          "
-        >
-          💬 Otras formas de contacto
-        </button>
-      </div>
-
-      <div
-        id="opciones-ecu"
-        style="
-          display: none;
-          background-color: rgba(255, 255, 255, 0.1);
-          padding: 20px;
-          border-radius: 10px;
-          text-align: left;
-          max-width: 600px;
-          margin: 0 auto;
-        "
-      >
-        <ul style="list-style: none; padding-left: 0; line-height: 1.6">
-          <li>
-            📧 <strong>Email:</strong>
-            <a href="mailto:contacto@ecu911.gob.ec" style="color: #ecf0f1"
-              >contacto@ecu911.gob.ec</a
-            >
-          </li>
-          <li>
-            🌐 <strong>Chat en línea:</strong>
-            <a
-              href="https://www.ecu911.gob.ec"
-              target="_blank"
-              style="color: #ecf0f1"
-              >www.ecu911.gob.ec</a
-            >
-          </li>
-          <li>
-            📷 <strong>Redes sociales:</strong> Twitter / X:
-            <a
-              href="https://twitter.com/ECU911Quito"
-              target="_blank"
-              style="color: #ecf0f1"
-              >@ECU911Quito</a
-            >
-          </li>
-          <li>
-            📍 <strong>Ubicación:</strong> Usa Google Maps y copia tu ubicación
-            para enviarla
-          </li>
-        </ul>
-
-        <button
-          onclick="copiarMensajeEmergencia()"
-          style="
-            margin-top: 15px;
-            background-color: #ffffff;
-            color: #c0392b;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-          "
-        >
-          📋 Copiar mensaje de emergencia
-        </button>
-
-        <p
-          id="mensaje-copiado"
-          style="
-            margin-top: 10px;
-            font-size: 0.85rem;
-            color: #2ecc71;
-            display: none;
-          "
-        >
-          ✅ Mensaje copiado al portapapeles.
-        </p>
-
-        <p style="font-size: 0.85rem; margin-top: 15px">
-          ⚠️ Recuerda: si puedes usar un teléfono, la llamada directa al 911 es
-          más rápida y efectiva.
-        </p>
-      </div>
-
-      <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.9">
-        El ECU 911 está disponible 24/7 para emergencias en todo el país.
-      </p>
-    </div>
+    </script> -->
 
     <script>
       function toggleOpcionesECU() {
